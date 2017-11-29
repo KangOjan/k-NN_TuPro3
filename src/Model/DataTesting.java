@@ -15,6 +15,7 @@ public class DataTesting {
     private int provokasi;
     private int komentar;
     private int emosi;
+    private int kelas;
 
     public DataTesting() {
     }
@@ -51,4 +52,13 @@ public class DataTesting {
         this.emosi = emosi;
     }
 
+    public int getKelas() {
+        return kelas;
+    }
+
+    public void setKelas(int kelas) {
+        this.kelas = kelas;
+    }
+
+    
 }

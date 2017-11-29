@@ -15,6 +15,7 @@ public class DataTraining {
     private int provokasi;
     private int komentar;
     private int emosi;
+    private int kelas;
 
     public DataTraining() {
     }
@@ -50,4 +51,14 @@ public class DataTraining {
     public void setEmosi(int emosi) {
         this.emosi = emosi;
     }
+
+    public int getKelas() {
+        return kelas;
+    }
+
+    public void setKelas(int kelas) {
+        this.kelas = kelas;
+    }
+    
+    
 }

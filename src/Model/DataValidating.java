@@ -15,6 +15,7 @@ public class DataValidating {
     private int provokasi;
     private int komentar;
     private int emosi;
+    private int kelas;
 
     public DataValidating() {
     }
@@ -51,4 +52,13 @@ public class DataValidating {
         this.emosi = emosi;
     }
 
+    public int getKelas() {
+        return kelas;
+    }
+
+    public void setKelas(int kelas) {
+        this.kelas = kelas;
+    }
+    
+    
 }
