@@ -5,7 +5,6 @@
  */
 package Main;
 
-import java.util.Scanner;
 
 /**
  *
@@ -26,6 +25,6 @@ public class Main {
 //        System.out.print("Provokasi 2 : ");
 //        provokasi2 = sc.nextInt();
 //        System.out.println(pro.jumlah(like1, like2, provokasi1, provokasi2));
-        pro.jumlahan();
+//        pro.jumlahan();
     }
 }
