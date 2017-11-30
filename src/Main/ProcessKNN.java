@@ -26,7 +26,7 @@ public class ProcessKNN {
     public double validasi() {
         for (int i = 1; i < valid.size(); i++) {
             for (int j = 1; j < train.size(); j++) {
-
+                
             }
         }
         return hasilValidasi;
