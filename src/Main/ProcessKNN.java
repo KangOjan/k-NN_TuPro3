@@ -129,7 +129,7 @@ public class ProcessKNN {
                     increment1++;
                 }
             }
-            //untuk menentukan kelas dari satu record data pada data testing
+            //untuk menentukan kelas dari satu record data pada data validasi
             DataValidating validating = valid.get(i);
             if (increment0 > increment1) {
                 validating.setKelas(0);
