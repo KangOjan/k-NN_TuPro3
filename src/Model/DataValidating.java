@@ -20,6 +20,13 @@ public class DataValidating {
     public DataValidating() {
     }
 
+    public DataValidating(int like, int provokasi, int komentar, int emosi) {
+        this.like = like;
+        this.provokasi = provokasi;
+        this.komentar = komentar;
+        this.emosi = emosi;
+    }
+
     public int getLike() {
         return like;
     }

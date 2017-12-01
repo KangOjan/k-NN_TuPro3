@@ -20,6 +20,13 @@ public class DataTraining {
     public DataTraining() {
     }
 
+    public DataTraining(int like, int provokasi, int komentar, int emosi) {
+        this.like = like;
+        this.provokasi = provokasi;
+        this.komentar = komentar;
+        this.emosi = emosi;
+    }
+
     public int getLike() {
         return like;
     }

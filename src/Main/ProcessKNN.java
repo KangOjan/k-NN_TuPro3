@@ -8,6 +8,13 @@ package Main;
 import Model.DataTesting;
 import Model.DataTraining;
 import Model.DataValidating;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -26,7 +33,7 @@ public class ProcessKNN {
     public double validasi() {
         for (int i = 1; i < valid.size(); i++) {
             for (int j = 1; j < train.size(); j++) {
-                
+
             }
         }
         return hasilValidasi;
@@ -41,27 +48,55 @@ public class ProcessKNN {
         return hasilTest;
     }
 
-//    public void jarakEuclidean() {
-//        int like_temp;
-//        for (int i = 1; i < test.size(); i++) { //untuk looping sebanyak data test
-//            for (int j = 1; j < train.size(); j++) { //untuk looping sebanyak data train
-//                //data tes ke 1 di cari nilai euclideannya dari semua data training
-//                //hasilnya akan disimpan di array hasil untuk data tes ke 1, dst
-//            }
-//        }
-//        tampil();
-//    }
-//
-//    public void tampil() {
-//        for (int i = 0; i < hasilnya.length; i++) {
-//            System.out.println(hasilnya[i]);
-//        }
-//    }
-//
-//    public double jumlah(int like1, int like2, int provokasi1, int provokasi2) {
-//        int jum1 = (like2 - like1) ^ 2;
-//        int jum2 = (provokasi2 - provokasi1) ^ 2;
-//        double hasil = Math.sqrt(jum1 + jum2);
-//        return hasil;
-//    }
+    //untuk membaca file
+    public ArrayList<String[]> ambilRecord(String path) {
+        String[] arrayRecord = null;
+        ArrayList<String[]> dataArray = new ArrayList<>();
+        try {
+            DataInputStream dis = new DataInputStream(new FileInputStream(new File(path)));
+            String kata;
+            while ((kata = dis.readLine()) != null) {
+                arrayRecord = kata.split("\t");
+                dataArray.add(arrayRecord);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("selesai");
+        return dataArray;
+    }
+
+    public void ambilDataTrain() {
+        ArrayList<String[]> txt = ambilRecord("./DataSet/DataTrain.txt");
+        for (int i = 0; i < txt.size(); i++) {
+            int like_tr = Integer.valueOf(txt.get(i)[1]);
+            int provokasi_tr = Integer.valueOf(txt.get(i)[1]);
+            int komentar_tr = Integer.valueOf(txt.get(i)[1]);
+            int emosi_tr = Integer.valueOf(txt.get(i)[1]);
+            train.add(new DataTraining(like_tr, provokasi_tr, komentar_tr, emosi_tr));
+        }
+    }
+    public void ambilDataValidasi() {
+        ArrayList<String[]> txt = ambilRecord("./DataSet/DataValidate.txt");
+        for (int i = 0; i < txt.size(); i++) {
+            int like_val = Integer.valueOf(txt.get(i)[1]);
+            int provokasi_val = Integer.valueOf(txt.get(i)[1]);
+            int komentar_val = Integer.valueOf(txt.get(i)[1]);
+            int emosi_val = Integer.valueOf(txt.get(i)[1]);
+            train.add(new DataTraining(like_val, provokasi_val, komentar_val, emosi_val));
+        }
+    }
+    public void ambilDataTest() {
+        ArrayList<String[]> txt = ambilRecord("./DataSet/DataTest.txt");
+        for (int i = 0; i < txt.size(); i++) {
+            int like_ts = Integer.valueOf(txt.get(i)[1]);
+            int provokasi_ts = Integer.valueOf(txt.get(i)[1]);
+            int komentar_ts = Integer.valueOf(txt.get(i)[1]);
+            int emosi_ts = Integer.valueOf(txt.get(i)[1]);
+            train.add(new DataTraining(like_ts, provokasi_ts, komentar_ts, emosi_ts));
+        }
+    }
+
 }
