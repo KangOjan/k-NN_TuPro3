@@ -15,5 +15,7 @@ public class Main {
     public static void main(String[] args) {
         ProcessKNN pro = new ProcessKNN();
         BacaFile bf = new BacaFile();
+        pro.ambilDataTrain();
+        pro.tampilDataTrain();
     }
 }
