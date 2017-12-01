@@ -14,8 +14,17 @@ public class Main {
 
     public static void main(String[] args) {
         ProcessKNN pro = new ProcessKNN();
-        BacaFile bf = new BacaFile();
         pro.ambilDataTrain();
-        pro.tampilDataTrain();
+        
+        //jika ingin mengetahui seberapa bagus algoritma KNN-nya, gunakan data validasi
+        //un-comment : 
+//        pro.ambilDataValidasi();
+//        pro.prediksiDataValidasi();
+//        pro.tampilDataValid();
+        
+        //ketiga method dibawah ini digunakan untuk mencari kelas pada data testing
+        pro.ambilDataTest();
+        pro.prediksiDataTesting();
+        pro.tampilDataTest();
     }
 }

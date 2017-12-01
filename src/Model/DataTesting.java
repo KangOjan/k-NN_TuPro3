@@ -11,20 +11,33 @@ package Model;
  */
 public class DataTesting {
 
+    private String id;
     private int like;
     private int provokasi;
     private int komentar;
     private int emosi;
     private int kelas;
+    private double jarak;
 
     public DataTesting() {
     }
 
-    public DataTesting(int like, int provokasi, int komentar, int emosi) {
+    public DataTesting(String id, int like, int provokasi, int komentar, int emosi, int kelas, double jarak) {
+        this.id = id;
         this.like = like;
         this.provokasi = provokasi;
         this.komentar = komentar;
         this.emosi = emosi;
+        this.kelas = kelas;
+        this.jarak = jarak;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public int getLike() {
@@ -67,5 +80,13 @@ public class DataTesting {
         this.kelas = kelas;
     }
 
-    
+    public double getJarak() {
+        return jarak;
+    }
+
+    public void setJarak(double jarak) {
+        this.jarak = jarak;
+    }
+
+   
 }
