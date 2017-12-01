@@ -26,9 +26,6 @@ public class ProcessKNN {
     ArrayList<DataTraining> train = new ArrayList<DataTraining>();
     ArrayList<DataValidating> valid = new ArrayList<DataValidating>();
     ArrayList<DataTesting> test = new ArrayList<DataTesting>();
-    private double hasil[];
-    private double hasilValidasi;
-    private double hasilTest;
 
     public double itungJarakTesting(DataTraining dtra, DataTesting dtes) {
         return Math.sqrt(
